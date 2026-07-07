@@ -80,7 +80,7 @@ CREATE TABLE TB_CUSTOMER(
 --2.이름은 문자데이터며 null값을 허용하지 않고
 --3.국어, 영어, 수학 컬럼을 number 타입으로 가지고 모두 다 null값을 허용하지 않습니다.
 --4.단, 국어,영어,수학 컬럼에 데이터를 넣지 않으면 기본값으로 0을 갖습니다.
---총점과 평균 컬럼은 기본값을 0을 갖습니다.
+--5.총점과 평균 컬럼은 기본값을 0을 갖습니다.
 
 CREATE TABLE STUDENT(
     student_num NUMBER(20) PRIMARY KEY,
