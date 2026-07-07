@@ -1,0 +1,85 @@
+--delete
+--DELETE FROM table_name WHERE conditions;
+
+--부서(DEPT) 테이블의 데이터를 삭제한다.(DELETE TRUNCATE 차이점)
+--DELETE는 ROLLBACK이 가능, TRUNCATE는 ROLLBACK이 불가능.
+DELETE FROM DEPT;
+
+TRUNCATE TABLE DEPT;
+
+SELECT * FROM DEPT;
+
+ROLLBACK;
+
+--DEPT 30번 부서를 삭제하시오.
+SELECT * FROM DEPT
+WHERE department_id = 30;
+
+DELETE FROM DEPT
+WHERE department_id = 30;
+
+DROP  TABLE DEPT;
+
+CREATE TABLE DEPT
+AS
+SELECT * FROM departments;
+
+SELECT * FROM DEPT;
+
+--[문제] EMP01 테이블을 삭제한 후 다음과 같은 구조로 EMP01 테이블을 생성하라
+DROP TABLE EMP01;
+
+CREATE TABLE EMP01(
+    EMPNO NUMBER(4),
+    ENAME VARCHAR2(10) NOT NULL,
+    JOB VARCHAR(9),
+    MGR NUMBER(4),
+    HIREDATE DATE NOT NULL,
+    SAL NUMBER(7,2) NOT NULL,
+    COMM NUMBER(7,2),
+    DEPTNO NUMBER(2) NOT NULL,
+    CONSTRAINT pk_emp01_no PRIMARY KEY(empno)
+);
+--[문제] EMP01 테이블에 다음과 같이 데이터를 추가하라
+INSERT INTO EMP01 VALUES (7369, 'SMITH', 'CLEAK', 7836, DATE'1987-12-17', 800, NULL, 20);
+INSERT INTO EMP01 VALUES (7499, 'ALLEN', 'SALESMAN', 7369, DATE'1987-12-20', 1600, 300, 30);
+INSERT INTO EMP01 VALUES (7839, 'KING', 'PRESIDENT', NULL, DATE'1981-02-08', 800, NULL, 10);
+
+SELECT * FROM EMP01;
+
+--[문제] 회원 정보를 저장하는 테이블을 MEMBERS란 이름으로 생성한다. MEMBERS 테이블은 다음과 같은 칼럼으로 구성된다.(pk는 primary key를 의미한다.)
+CREATE TABLE MEMBERS(
+    ID VARCHAR2(20),
+    NAME VARCHAR2(20) NOT NULL,
+    REGNO VARCHAR2(13) NOT NULL,
+    HP VARCHAR2(13) NOT NULL,
+    ADDRESS VARCHAR2(100) NOT NULL,
+    CONSTRAINT members_id PRIMARY KEY(ID)
+);
+
+--[문제] 도서 정보를 저장하는 BOOKS이란 이름으로 생성한다. 테이블은 다음과 같은 칼럼으로 구성된다.(pk는 primary key를 의미한다.)
+CREATE TABLE BOOKS (
+    code NUMBER(4),
+    title VARCHAR2(50) NOT NULL,
+    count NUMBER(6) NOT NULL,
+    price NUMBER(10) NOT NULL,
+    publish VARCHAR2(50) NOT NULL,
+    CONSTRAINT books_code PRIMARY KEY(code)
+);
+
+--각자 위 두개의 테이블에 임의의 데이터를 입력해 주세요.
+
+INSERT INTO MEMBERS VALUES ('honggil', '홍길동', '1234561234567', '010-1234-5678', '경기도 성남시');
+INSERT INTO MEMBERS VALUES ('EXAMPLE', '아무개', '1111111234567', '010-1111-5678', '경기도 시흥시');
+INSERT INTO MEMBERS VALUES ('gana', '김가나', '0000001234567', '010-0000-5678', '경기도 안산시');
+
+INSERT INTO BOOKS VALUES(1247, '해리포터 마법사의 돌' , 456, 27000, 'Blooms bury');
+INSERT INTO BOOKS VALUES(1045, '개미' , 127, 24000, '열린책들');
+INSERT INTO BOOKS VALUES(1047, '나무' , 852, 18000, '어린이책');
+
+SELECT * FROM MEMBERS;
+SELECT * FROM BOOKS;
+
+DROP TABLE EMP01;
+DROP TABLE MEMBERS;
+DROP TABLE BOOKS;
