@@ -93,3 +93,9 @@ SELECT * FROM user_sequences;
 --dept_seq 삭제
 DROP SEQUENCE dept_seq;
 
+SELECT * FROM user_indexes
+WHERE table_name = 'EMPLOYEES';
+
+SELECT * FROM user_ind_columns
+WHERE table_name = 'EMPLOYEES';
+
