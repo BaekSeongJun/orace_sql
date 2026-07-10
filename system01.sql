@@ -24,12 +24,13 @@ MAXSIZE 20M;
 
 --사용자 설정 (id : javauser, password: javauser, tablespace : firstData)
 ALTER SESSION SET "_ORACLE_SCRIPT"=true;  
-CREATE USER springuser IDENTIFIED BY springuser
+
+CREATE USER springboard IDENTIFIED BY springboard
 DEFAULT TABLESPACE users
 TEMPORARY TABLESPACE temp;
 
 -- 사용자 권한 설정 (javauser에게 접속권한과 테이블 CURD권한 부여)
-GRANT CONNECT, RESOURCE, dba to springuser;
+GRANT CONNECT, RESOURCE, dba to springboard;
 
 -- 접속 요청을 진행하면 된다.
 
