@@ -104,3 +104,5 @@ ON m.user_no = a.user_no;
 
 Drop Table mybatismember;
 Drop table mybatismember_auth;
+
+SELECT * FROM mybatismember_auth;
