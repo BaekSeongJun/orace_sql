@@ -106,3 +106,21 @@ Drop Table mybatismember;
 Drop table mybatismember_auth;
 
 SELECT * FROM mybatismember_auth;
+
+-------------------------file upload--------------------
+
+CREATE TABLE item( 
+    item_id NUMBER(5),
+    item_name VARCHAR2(20),
+    price NUMBER(6),
+    description VARCHAR2(50),
+    picture_url VARCHAR2(200),
+    CONSTRAINT pk_item_id PRIMARY KEY (item_id) 
+); 
+ 
+CREATE SEQUENCE item_seq
+START WITH 1 
+INCREMENT BY 1;
+
+select * from user_sequences;
+
