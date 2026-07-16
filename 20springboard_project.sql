@@ -122,5 +122,18 @@ CREATE SEQUENCE item_seq
 START WITH 1 
 INCREMENT BY 1;
 
-select * from user_sequences;
+select * from item;
 
+CREATE TABLE item2( 
+    item_id NUMBER(5), 
+    item_name VARCHAR2(20), 
+    price NUMBER(6), 
+    description VARCHAR2(50), 
+    picture_url VARCHAR2(200), 
+    picture_url2 VARCHAR2(200), 
+    CONSTRAINT pk_item2_id PRIMARY KEY (item_id) 
+); 
+ 
+create sequence item2_seq 
+start with 1 
+increment by 1; 
