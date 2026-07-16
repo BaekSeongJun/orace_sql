@@ -137,3 +137,5 @@ CREATE TABLE item2(
 create sequence item2_seq 
 start with 1 
 increment by 1; 
+
+select * from user_sequences;
